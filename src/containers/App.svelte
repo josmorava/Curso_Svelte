@@ -6,12 +6,12 @@
   import {onMount} from 'svelte';
 
   let data = {};
-  const API = 'https://us-central-pugstagram-co.cloudfuctions.net/data';
+  const API = "https://us-central1-pugstagram-co.cloudfunctions.net/data";
 
   onMount(async () =>{
     //peticiones a una api con svelte
-    const response = await fetch(API)
-    data = await response.jason();
+    const response = await fetch(API);
+    data = await response.json();
   });
 </script>
 
@@ -34,6 +34,6 @@
 
 <Header />
 <Main>
-  <Timeline post={data.post}/>
+  <Timeline posts={data.posts}/>
   <Slidebar {...data.user}/>
 </Main>
